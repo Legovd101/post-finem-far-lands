@@ -1,0 +1,22 @@
+him_tolerance = {
+	tolerance_heathen = 2.0
+	tolerance_heretic = 3.0
+	global_missionary_strength = -0.04
+}
+him_intolerance = {
+	tolerance_heathen = -2.0
+	tolerance_heretic = -3.0
+	global_missionary_strength = 0.04
+}
+him_noninterference = {
+	global_unrest = -9.0
+	global_missionary_strength = -10.0
+}
+zealotry = {
+	global_missionary_strength = 0.04
+	missionary_maintenance_cost = -0.25
+}
+conversion_of_yathrib = {
+	legitimacy = 1
+	global_heathen_missionary_strength = 0.15
+}

@@ -1,0 +1,64 @@
+#Horn of Africa
+dependency = {
+	subject_type = "tributary_state"
+	first = BTI
+	second = DAM
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+dependency = {
+	subject_type = "tributary_state"
+	first = HAR
+	second = AFA
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+vassal = {
+	first = HAR
+	second = MUR
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+#Huwan
+dependency = {
+	subject_type = "tributary_state"
+	first = OGD
+	second = WLY
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+dependency = {
+	subject_type = "tributary_state"
+	first = OGD
+	second = WAR
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+#Macroobiya
+dependency = {
+	subject_type = "tributary_state"
+	first = MCB
+	second = MLI
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+vassal = {
+	first = MCB
+	second = PTE
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+vassal = {
+	first = MCB
+	second = SRP
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+vassal = {
+	first = MCB
+	second = MLI
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}

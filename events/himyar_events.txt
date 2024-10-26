@@ -1,0 +1,263 @@
+namespace = himyarite_events
+
+country_event = {
+    id = himyarite_events.1
+    title = himyarite_events.1.title
+    desc = himyarite_events.1.desc
+    picture = CHURCH_ESTATE_1_eventPicture
+
+    is_triggered_only = yes
+
+	trigger = {
+	}
+
+    option = {		# tolerance
+        name = himyarite_events.1.a
+		ai_chance = {
+			factor = 10
+		}
+		trigger = { NOT = { has_country_modifier = him_tolerance } }
+		add_adm_power = -50
+		add_country_modifier = {
+			name = him_tolerance
+			duration = -1
+		}
+		if = {
+			limit = {
+				has_country_modifier = him_intolerance
+				has_country_modifier = him_tolerance
+				has_country_modifier = him_noninterference
+			}
+		}
+		else_if = {
+			limit = { religious_unity = 0.90 }
+			random = {
+				chance = 90
+				add_stability = -1
+			}
+		}
+		else_if = {
+			limit = { religious_unity = 0.75 }
+			random = {
+				chance = 75
+				add_stability = -1
+			}
+		}
+		else_if = {
+			limit = { religious_unity = 0.60 }
+			random = {
+				chance = 60
+				add_stability = -1
+			}
+		}
+		else_if = {
+			limit = { religious_unity = 50 }
+			random = {
+				chance = 40
+				add_stability = -1
+			}
+		}
+		hidden_effect = {
+			ROOT = {
+				country_event = { id = himyarite_events.1 days = 3650 }
+			}
+			remove_country_modifier = him_intolerance
+			remove_country_modifier = him_noninterference
+		}
+    }
+	option = {		# intolerance
+        name = himyarite_events.1.b
+		ai_chance = {
+			factor = 10
+		}
+		trigger = { NOT = { has_country_modifier = him_intolerance } }
+		add_adm_power = -50
+        add_country_modifier = {
+			name = him_intolerance
+			duration = -1
+		}
+		if = {
+			limit = {
+				has_country_modifier = him_intolerance
+				has_country_modifier = him_tolerance
+				has_country_modifier = him_noninterference
+			}
+		}
+		else_if = {
+			limit = { NOT = { religious_unity = 10 } }
+			random = {
+				chance = 90
+				add_stability = -1
+			}
+		}
+		else_if = {
+			limit = { NOT = { religious_unity = 25 } }
+			random = {
+				chance = 75
+				add_stability = -1
+			}
+		}
+		else_if = {
+			limit = { NOT = { religious_unity = 40 } }
+			random = {
+				chance = 60
+				add_stability = -1
+			}
+		}
+		else_if = {
+			limit = { NOT = { religious_unity = 50 } }
+			random = {
+				chance = 40
+				add_stability = -1
+			}
+		}
+		hidden_effect = {
+			ROOT = {
+				country_event = { id = himyarite_events.1 days = 3650 }
+			}
+			remove_country_modifier = him_tolerance
+			remove_country_modifier = him_noninterference
+		}
+    }
+	option = {		# leave them alone for now
+        name = himyarite_events.1.c
+		ai_chance = {
+			factor = 15
+		}
+		trigger = { NOT = { has_country_modifier = him_noninterference } }
+        add_country_modifier = {
+			name = him_noninterference
+			duration = -1
+		}
+		if = {
+			limit = { NOT = { religious_unity = 50 } }
+			random = {
+				chance = 75
+				every_owned_province = {
+					limit = { NOT = { religion = ROOT } }
+					add_unrest = -5
+				}
+			}
+		}
+		hidden_effect = {
+			ROOT = {
+				country_event = { id = himyarite_events.1 days = 3650 }
+			}
+			remove_country_modifier = him_intolerance
+			remove_country_modifier = him_tolerance
+		}
+    }
+	option = {		# extend current policy
+        name = himyarite_events.1.d
+		ai_chance = {
+			factor = 15
+		}
+		trigger = {
+			OR = {
+				has_country_modifier = him_intolerance
+				has_country_modifier = him_tolerance
+				has_country_modifier = him_noninterference
+			}
+		}
+		add_adm_power = -50
+		custom_tooltip = extending_current_policy
+		hidden_effect = {
+			ROOT = {
+				country_event = { id = himyarite_events.1 days = 3650 }
+			}
+		}
+    }
+	option = {		# no/few heathens and heretics
+        name = himyarite_events.1.e
+		ai_chance = {
+			factor = 15
+		}
+		trigger = { religious_unity = 100 }
+		hidden_effect = {
+			ROOT = {
+				country_event = { id = himyarite_events.1 days = 3650 }
+			}
+		}
+    }
+}
+
+country_event = {
+    id = himyarite_events.2
+    title = himyarite_events.2.title
+    desc = himyarite_events.2.desc
+    picture = AULIC_COUNCIL_eventPicture
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+    option = {		# tolerant path
+        name = himyarite_events.2.a
+		ai_chance = {
+			factor = 10
+		}
+		custom_tooltip = tolerant_tt
+		set_country_flag = him_tolerant_path
+		swap_non_generic_missions = yes
+    }
+	option = {		# intolerant path
+        name = himyarite_events.2.b
+		ai_chance = {
+			factor = 10
+		}
+		custom_tooltip = intolerant_tt
+		set_country_flag = him_intolerant_path
+		swap_non_generic_missions = yes
+    }
+}
+
+province_event = {
+
+    id = himyarite_events.3
+    title = himyarite_events.3.title
+    desc = himyarite_events.3.desc
+    picture = JUDAISM_eventPicture
+	
+	trigger = {
+		NOT = { religion = owner }
+		owner = { OR = { tag = HIM tag = MNT } mission_completed = reversing_devastation }
+		has_owner_accepted_culture = yes
+		is_core = owner
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+		
+		modifier = {
+			factor = 0.8
+			stability = 0
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { unrest = 0 }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { tag = MNT }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { development = 10 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { development = 20 }
+		}
+		modifier = {
+			factor = 0
+			owner = { sunni = -1 }
+		}
+	}
+	
+    option = {		# tolerant path
+        name = himyarite_events.3.a
+		ai_chance = {
+			factor = 10
+		}
+		change_religion = owner
+    }
+}

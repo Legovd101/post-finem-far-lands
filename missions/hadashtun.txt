@@ -1,0 +1,313 @@
+HSH1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HSH } 
+
+	clear_forests = {
+		icon = mng_tame_china_sorrow
+		position = 3
+		required_missions = {  } 
+		provinces_to_highlight = {} 
+
+		trigger = {
+			treasury = 100
+		}
+		effect = {
+			add_treasury = -100
+			add_disaster_progress = {
+				disaster = native_coalition
+				value = -15
+			}
+			capital_scope = {
+				remove_province_modifier = hsh_thick_forests
+			}
+		}
+	}
+}
+
+HSH2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HSH } 
+
+	hannos_legacy = {
+		icon = mission_russian_navy
+		position = 2
+		required_missions = { coming_storm } 
+		provinces_to_highlight = {} 
+
+		trigger = {
+			num_of_admirals = 1
+		}
+		effect = {
+			add_disaster_progress = {
+				disaster = native_coalition
+				value = -5
+			}
+			grao_para_area = {
+				discover_country = ROOT
+			}
+			amapa_area = {
+				discover_country = ROOT
+			}
+			2890 = {
+				change_trade_goods = gold
+			}
+		}
+	}
+
+	maritime_development = {
+		icon = mission_advance_to_the_dnieper
+		position = 3
+		required_missions = { hannos_legacy } 
+		provinces_to_highlight = {} 
+
+		trigger = {
+			capital_scope = {
+				has_building = marketplace
+			}
+			navy_size = 15
+		}
+		effect = {
+			capital_scope = {
+				center_of_trade = 1
+			}
+			country_event = {
+				id = baqshi_events.7
+			}
+		}
+	}
+
+	beseech_gods = {
+		icon = mission_kowtow
+		position = 3
+		required_missions = { maritime_development clear_forests } 
+		provinces_to_highlight = {} 
+
+		trigger = {
+			any_owned_province = {
+				development = 15
+			}
+		}
+		effect = {
+			capital_scope = {
+				center_of_trade = 2
+			}
+		}
+	}
+}
+
+HSH3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HSH } 
+
+	coming_storm = {
+		icon = mission_persian_soldiers
+		position = 1
+		required_missions = {} 
+		provinces_to_highlight = {} 
+
+		trigger = {
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 50
+			}
+			num_of_infantry = 5
+		}
+		effect = {
+			country_event = {
+				id = baqshi_events.5
+				
+			}
+		}
+	}
+	
+	diplomatic_efforts = {
+		icon = mission_sio_european_trade
+		position = 2
+		required_missions = { coming_storm } 
+		provinces_to_highlight = {} 
+
+		trigger = {
+			any_known_country = {
+				government = native
+				alliance_with = ROOT
+			}
+		}
+		effect = {
+			add_disaster_progress = {
+				disaster = native_coalition
+				value = -20
+			}
+		}
+	}
+
+	making_friends = {
+		icon = mission_iroquois_haudenosaunee
+		position = 3
+		required_missions = { diplomatic_efforts } 
+		provinces_to_highlight = {}
+
+		trigger = {
+			capital_scope = {
+				has_building = temple
+			}
+		}
+		effect = {
+			random_known_country = {
+				limit = { government = native alliance_with = ROOT } 
+				change_religion = ROOT
+				set_ruler_religion = ROOT
+				set_heir_religion = ROOT
+				set_consort_religion = ROOT
+			}
+			add_disaster_progress = {
+				disaster = native_coalition
+				value = -10
+			}
+		}
+	}
+
+	existence_assured = {
+		icon = mch_bypass_great_wall
+		position = 5
+		required_missions = { making_friends plan_of_defense beseech_gods } 
+		provinces_to_highlight = {}
+
+		trigger = {
+			dip_tech = 4
+			adm_tech = 4
+			mil_tech = 4
+		}
+		effect = {
+			country_event = {
+				id = baqshi_events.6
+			}
+		}
+	}
+}
+
+HSH4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HSH } 
+	
+	developing_outskirts = {
+		icon = mission_potosi_silver
+		position = 2
+		required_missions = { coming_storm } 
+		provinces_to_highlight = {}
+
+		trigger = {
+			grown_by_development = 6
+		}
+		effect = {
+			add_disaster_progress = {
+				disaster = native_coalition
+				value = -5
+			}
+		}
+	}
+	
+	formalized_defense = {
+		icon = mission_ne_palisades
+		position = 3
+		required_missions = { developing_outskirts } 
+		provinces_to_highlight = {}
+
+		trigger = {
+			capital_scope = {
+				has_building = fort_15th
+			}
+		}
+		effect = {
+			add_disaster_progress = {
+				disaster = native_coalition
+				value = -10
+			}
+		}
+	}
+	
+	plan_of_defense = {
+		icon = mission_pf_map_table
+		position = 4
+		required_missions = { formalized_defense well_be_okay } 
+		provinces_to_highlight = {}
+
+		trigger = {
+			employed_advisor = {
+				category = MIL
+			}
+		}
+		effect = {
+			add_disaster_progress = {
+				disaster = native_coalition
+				value = -10
+			}
+		}
+	}
+}
+
+HSH5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HSH } 
+
+	well_be_okay = {
+		icon = mission_serfdom
+		position = 3
+		required_missions = {  } 
+		provinces_to_highlight = {} 
+
+		trigger = {
+			stability = 2
+		}
+		effect = {
+			capital_scope = {
+				add_prosperity = 25
+			}
+		}
+	}
+
+}
+
+# HSH1_post_colonial = {
+	# slot = 1
+	# generic = no
+	# ai = yes
+	# has_country_shield = yes
+	# potential = { tag = HSH } 
+
+	# clear_forests = {
+		# icon = mng_tame_china_sorrow
+		# position = 3
+		# required_missions = {  } 
+		# provinces_to_highlight = {} 
+
+		# trigger = {
+			# treasury = 100
+		# }
+		# effect = {
+			# add_treasury = -100
+			# add_disaster_progress = {
+				# disaster = native_coalition
+				# value = -15
+			# }
+			# capital_scope = {
+				# remove_province_modifier = hsh_thick_forests
+			# }
+		# }
+	# }
+
+# }

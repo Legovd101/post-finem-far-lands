@@ -1,0 +1,91 @@
+country_decisions = {
+
+	reform_kush = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = pffl_formed_kush }
+			was_never_end_game_tag_trigger = yes
+			OR = {
+				tag = NBA
+				tag = BEM
+				tag = ALW
+			}
+			is_colonial_nation = no
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						area = upper_nubia_area
+						area = lower_nubia_area
+						area = red_sea_coast_area
+						area = dongola_area
+						area = sennar_area
+					}
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					OR = {
+						province_id = 2324
+						province_id = 1234
+						province_id = 1217
+					}
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+				}
+				AND = {
+					province_id = 2797
+					is_state = no
+				}
+			}
+		}
+		allow = {
+			NOT = { exists = KUS }
+			is_at_war = no
+			is_subject = no
+			is_nomad = no			
+			owns_core_province = 2324
+			owns_core_province = 1234
+			is_free_or_tributary_trigger = yes
+			2797 = { 					#  Meroe
+				is_state = yes
+			}
+			dongola_area = {
+				type = all
+				owned_by = ROOT
+			}
+			upper_nubia_area = {
+				type = all
+				owned_by = ROOT
+			}
+			sennar_area = {
+				type = all
+				owned_by = ROOT
+			}
+			lower_nubia_area = {
+				type = all
+				owned_by = ROOT
+			}
+			red_sea_coast_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			set_capital = 2797
+			change_tag = KUS
+			set_country_flag = pffl_formed_kush
+			custom_tooltip = empty_line_tt
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

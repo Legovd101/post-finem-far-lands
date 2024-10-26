@@ -1,0 +1,11 @@
+﻿l_english:
+ waaqeffanna: "Waaqeffanna"
+ waaqeffanna_religion_desc: "Waaqeffanna is the traditional religion within much of the Horn of Africa. Centered around worship of the Supreme Creator Waaqa, Waaqeffataas believe that Waaqa sends messages to His creations through the Ayyaana, who in turn possess men and women known as Qaalluu. Their jobs are to be the temporal exemplars of Waaqa's ethics and supporters of the democratic Gadaa System."
+ caabudiloda: "Caabudiloda"
+ uumami: "Uumami"
+ waaqeffanna_rebels_demand: "Convert $COUNTRYNAME$"
+ waaqeffanna_rebels_demand_desc: "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
+ waaqeffanna_rebels_title: "Religious"
+ waaqeffanna_rebels_name: "$RELIGION$ Zealots"
+ waaqeffanna_rebels_desc: "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
+ waaqeffanna_rebels_army: "$RELIGION$ Army"

@@ -1,0 +1,12 @@
+name = "Yamnati Civil War"
+war_goal = {
+	type = annex_country
+	casus_belli = cb_annex
+	province = 90
+}
+
+1420.11.10 = {
+	add_attacker = SHB
+	add_defender = HIM
+	add_defender = BEB
+}

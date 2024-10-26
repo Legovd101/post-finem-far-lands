@@ -1,0 +1,25 @@
+government = monarchy
+add_government_reform = negusa_nagast
+government_rank = 1
+primary_culture = agaw
+religion = catholic
+technology_group = east_african
+unit_type = sub_saharan
+capital = 2769# Lasta/Lalibela
+change_estate_land_share = { 
+	estate = estate_nobles
+	share = 12
+}
+change_estate_land_share = { 
+	estate = estate_church
+	share = -12
+}
+1433.1.1 = { 
+	monarch = { 
+		name = "Amda Iyasus"
+		dynasty = "Zagwe"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}

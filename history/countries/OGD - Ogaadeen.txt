@@ -1,0 +1,18 @@
+government = theocracy
+technology_group = east_african
+government_rank = 2
+unit_type = sub_saharan
+religion = waaqeffanna
+add_government_reform = pffl_gadaa_theocracy_reform
+primary_culture = ogaadeen
+capital = 1207	# Ogaadeen
+
+1443.1.1 = {
+	monarch = {
+		name = "Ahmed"
+		dynasty = "Darod"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

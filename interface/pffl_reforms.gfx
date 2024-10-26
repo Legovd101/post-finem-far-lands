@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "government_reform_vinland_colony"
+		texturefile = "gfx//interface//government_reforms//vinland_colony.dds"
+	}
+}

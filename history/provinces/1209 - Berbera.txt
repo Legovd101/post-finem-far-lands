@@ -1,0 +1,15 @@
+#1209 - Berbera
+owner = BEB
+controller = BEB
+add_core = BEB
+culture = somali
+religion = jewish
+capital = "Berbera"
+is_city = yes
+base_manpower = 2
+trade_goods = slaves
+base_tax = 4
+base_production = 4
+discovered_by = east_african
+discovered_by = muslim
+discovered_by = indian

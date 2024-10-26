@@ -1,0 +1,17 @@
+#2781 - Gedo
+owner = MCB
+controller = MCB
+add_core = MCB
+add_core = GLE
+culture = macroobii
+religion = waaqeffanna
+capital = "Luuq"
+trade_goods = grain
+is_city = yes
+base_tax = 1
+base_production = 1
+base_manpower = 1
+discovered_by = east_african
+discovered_by = indian
+discovered_by = muslim
+discovered_by = SRP

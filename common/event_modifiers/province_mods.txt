@@ -1,0 +1,36 @@
+him_east_frontier = {
+	local_garrison_size = 0.2
+	local_fort_maintenance_modifier = -0.5
+}
+him_arabian_exports = {
+	local_missionary_strength = -0.05
+	local_production_efficiency = 0.25
+	local_tax_modifier = 0.25
+}
+him_indian_imports = {
+	local_development_cost_modifier = 0.1
+	local_production_efficiency = 0.25
+	local_tax_modifier = 0.25
+}
+him_extra_garrisons = {
+	local_garrison_size = 0.25
+	local_fort_maintenance_modifier = 0.25
+	local_unrest = -4.0
+}
+him_religious_settlements = {
+	local_missionary_maintenance_cost = -0.25
+	local_missionary_strength = 0.04
+}
+shb_imports = {
+	local_development_cost_modifier = 0.1
+	local_production_efficiency = 0.25
+	local_tax_modifier = 0.25
+}
+hsh_thick_forests = {
+	local_unrest = 18
+	development_cost = 0.75
+}
+ogd_delegated_services = {
+	local_tax_modifier = 0.5
+	local_build_cost = -0.15
+}

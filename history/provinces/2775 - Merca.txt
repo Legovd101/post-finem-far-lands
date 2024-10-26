@@ -1,0 +1,17 @@
+#2775 - Merca
+owner = MCB
+controller = MCB
+add_core = MCB
+culture = macroobii
+religion = waaqeffanna
+capital = "Merca"
+is_city = yes
+base_manpower = 1
+trade_goods = naval_supplies
+base_tax = 2
+base_production = 2
+add_local_autonomy = 25
+discovered_by = east_african
+discovered_by = indian
+discovered_by = muslim
+discovered_by = SRP

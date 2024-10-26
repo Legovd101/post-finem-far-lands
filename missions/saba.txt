@@ -1,0 +1,500 @@
+SHB1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = SHB } 
+
+	islamic_allies = {
+		icon = mission_have_two_subjects
+		position = 1
+		provinces_to_highlight = {
+			is_capital = yes
+			owner = { religion = muslim }
+		}
+		trigger = {
+			any_country = {
+				religion = sunni
+				has_opinion = {
+					who = ROOT
+					value = 75
+				}
+			}
+		}
+
+		effect = {
+			random_country = {
+				limit = {
+					religion = sunni
+					has_opinion = {
+						who = ROOT
+						value = 75
+					}
+				}
+				create_alliance = ROOT
+				join_all_offensive_wars_of = ROOT
+			}
+		}
+	}
+}
+SHB2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = SHB } 
+
+	shb_twenty_years_war = {
+		icon = mission_impaled_soldies
+		position = 2
+		required_missions = { islamic_allies tyrant_king } 
+		provinces_to_highlight = {
+			owner = { war_with = ROOT }
+			NOT = { controller = { tag = ROOT } }
+		}
+
+		trigger = {
+			OR = {
+				HIM = {
+					all_owned_province = {
+						controlled_by = ROOT
+					}
+					NOT = { war_score = -99 }
+				}
+			}
+		}
+
+		effect = {
+			every_province = {
+				limit = { owner = { tag = HIM } }
+				cede_province = SHB
+				remove_core = HIM
+			}
+		}
+	}
+
+	shb_reestablishing_authority = {
+		icon = mission_kowtow
+		position = 3
+		required_missions = { shb_twenty_years_war } 
+		provinces_to_highlight = {
+			owner = { tag = ROOT }
+			NOT = { is_core = ROOT }
+		}
+
+		trigger = {			
+			all_owned_province = { is_core = ROOT }
+		}
+
+		effect = {
+			add_legitimacy = -15
+			add_piety = -0.10
+			country_event = {
+				id = sabean_events.2
+			}
+		}
+	}
+}
+
+SHB2_unknown = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = SHB
+		NOT = {	has_country_flag = shb_expansionist_path }
+		NOT = { has_country_flag = shb_proselytize_path }
+	}
+	
+	shb_unknown_mission_1 = {
+		icon = mission_unknown_mission
+		position = 4
+		required_missions = { shb_reestablishing_authority } 
+		provinces_to_highlight = {
+		}
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+
+		effect = {
+		}
+	}
+	
+	shb_unknown_mission_2 = {
+		icon = mission_unknown_mission
+		position = 5
+		required_missions = { shb_unknown_mission_1 } 
+		provinces_to_highlight = {
+		}
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+
+		effect = {
+		}
+	}
+	
+	shb_unknown_mission_3 = {
+		icon = mission_unknown_mission
+		position = 6
+		required_missions = { shb_unknown_mission_2 } 
+		provinces_to_highlight = {
+		}
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+
+		effect = {
+		}
+	}
+}
+SHB2_expansionist = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = SHB has_country_flag = shb_expansionist_path } 
+
+	northern_allies = {
+		icon = mission_occupy_alexandria
+		position = 4
+		required_missions = { shb_reestablishing_authority } 
+		provinces_to_highlight = {
+			is_capital = yes
+			owner = { OR = { tag = MFL tag = NJR } }
+		}
+
+		trigger = {
+			MFL = {
+				has_opinion = {
+					who = ROOT
+					value = 100
+				}
+			}
+			NJR = {
+				OR = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+					AND = {
+						is_rival = ROOT
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			change_ruler_stat = {
+				amount = 1
+				type = dip
+			}
+			vassalize = MFL
+			MFL = {
+				inherit = NJR
+				change_primary_culture = minaean
+				change_government = theocracy
+				set_ruler_culture = minaean
+				every_owned_province = {
+					limit = { culture = kindah }
+					change_culture = minaean
+				}
+				every_owned_province = {
+					limit = { culture = lihyan }
+					change_culture = yathribi
+				}
+			}
+		}
+	}
+
+	expand_ulema = {
+		icon = mission_saharan_route
+		position = 5
+		required_missions = { northern_allies } 
+		provinces_to_highlight = {
+			owner = { tag = ROOT }
+			NOT = { religion = ROOT has_building = temple }
+		}
+
+		trigger = {
+			calc_true_if = {
+				amount = 5
+				all_province = {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { religion = ROOT }
+					has_building = temple
+				}
+			}
+		}
+
+		effect = {
+			every_province = {
+				limit = { country_or_non_sovereign_subject_holds = ROOT has_building = temple }
+				change_religion = sunni
+			}
+			mecca_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			medina_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	avenge_muhmad = {
+		icon = mission_abu_saids_dream
+		position = 6
+		required_missions = { expand_ulema } 
+		provinces_to_highlight = {
+			OR = {
+				area = mecca_area
+				area = medina_area
+			}
+			OR = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		} 
+
+		trigger = {
+			mecca_area = { 
+				country_or_non_sovereign_subject_holds = ROOT
+				type = all
+			}
+			medina_area = { 
+				country_or_non_sovereign_subject_holds = ROOT
+				type = all
+			}
+		}
+
+		effect = {
+			set_country_flag = formed_expansionist_yahatzyat
+			add_legitimacy = 20
+			add_piety = 0.20
+			country_event = {
+				id = yamnati_events.1
+			}
+			mecca_area = {
+				add_core = MFL
+			}
+			medina_area = {
+				add_core = MFL
+			}
+			385 = {
+				change_culture = yathribi
+				change_religion = sunni
+			}
+			384 = {
+				change_culture = yathribi
+				change_religion = sunni
+			}
+		}
+	}
+}
+
+SHB2_proselytize = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = SHB has_country_flag = him_proselytizing_path } 
+
+	shb_yamnati_brothers = {
+		icon = mission_patronize_sufi_scholars
+		position = 4
+		required_missions = { shb_reestablishing_authority } 
+		provinces_to_highlight = {
+			culture = himyarite
+		}
+
+		trigger = {
+			accepted_culture = himyarite
+		}
+
+		effect = {
+			change_ruler_stat = {
+				amount = 2
+				type = dip
+			}
+			every_province = {
+				limit = { culture = sabean }
+				add_unrest = -2
+			}
+			custom_tooltip = proselytization_mechanics_tt
+			country_event = {
+				id = sabean_events.3
+			}
+
+		}
+	}
+	
+	spreading_light = {
+		icon = mission_early_game_buildings
+		position = 5
+		required_missions = { shb_yamnati_brothers } 
+		provinces_to_highlight = {
+			owner = { tag = ROOT }
+			NOT = { religion = ROOT }
+		}
+
+		trigger = {
+			OR = {
+				all_owned_province = {
+					religion = ROOT
+				}
+				religious_unity = 1
+			}
+		}
+
+		effect = {
+			every_province = {
+				limit = { culture = sabean }
+				add_unrest = -4
+			}
+		}
+	}
+	over_horizon  = {
+		icon = mission_conquer_arakan
+		position = 6
+		required_missions = { spreading_light } 
+		provinces_to_highlight = {
+			has_province_flag = missionaries_succsessful
+		} 
+
+		trigger = {
+			calc_true_if = {
+				amount = 8
+				all_province = { has_province_flag = missionaries_successful }
+			}
+		}
+
+		effect = {
+			set_country_flag = formed_proselytizing_yahatzyat
+			add_legitimacy = 30
+			country_event = {
+				id = yamnati_events.1
+			}
+		}
+	}
+}
+
+SHB3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = SHB } 
+
+	tyrant_king = {
+		icon = mission_assemble_an_army
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			adm_power = 150
+			dip_power = 100
+			mil_power = 200
+		}
+
+		effect = {
+			every_province = {
+				limit = { owner = { tag = SHB } }
+				add_permanent_claim = ROOT
+			}
+			add_mil_tech = 1
+			
+		}
+	}
+}
+SHB4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = SHB } 
+}
+SHB5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = SHB } 
+
+	spark_of_hope = {
+		icon = mission_central_asian_city
+		position = 1
+		required_missions = {  } 
+
+		trigger = {
+			grown_by_development = 10
+		}
+
+		effect = { 
+			add_country_modifier = {
+				name = zealotry
+				duration = 7300
+			}
+		} 
+	}
+
+	exploiting_opportunity = {
+		icon = mission_arabian_fort
+		position = 3
+		required_missions = { spark_of_hope } 
+		provinces_to_highlight = {
+			province_id = 4279
+		}
+
+		trigger = {
+			4279 = {
+				has_building = marketplace
+			}
+		}
+
+		effect = {
+			set_country_flag = can_use_propagate_religion
+			4279 = {
+				add_province_modifier = {
+					name = "him_arabian_exports"
+					duration = 3650
+				}
+			}
+			random_province = {
+				limit = {
+					religion = sunni
+					continent = africa
+				}
+				387 = {
+					add_province_modifier = {
+						name = "shb_imports"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+}

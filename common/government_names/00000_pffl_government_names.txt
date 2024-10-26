@@ -1,0 +1,139 @@
+# For specific combinations of culture, religion and other such triggers
+# Will pick the first valid one it finds in list
+
+#Heir and consort titles are generally kept simple for clarity unless there is something special in particular that can be used.
+
+
+himyarite_names = {
+	rank = {
+		1 = QAHTANAT        
+		2 = TUBBAT       
+		3 = MUKRABAT     
+	}
+
+	ruler_male = {
+		1 = QAHTAN          
+		2 = TUBBA
+		3 = MUKARRIB
+	}
+
+	ruler_female = {
+		1 = QAHTIA
+		2 = TABIA
+		3 = TABIA
+	}
+
+	consort_female = {
+		1 = QAHTIA
+		2 = TABIA
+		3 = TABIA
+	}
+
+	consort_male = {
+		1 = QAHTAN          
+		2 = TUBBA
+		3 = MUKARRIB
+	}
+
+	heir_male = {
+		1 = BN_QAHTAN          
+		2 = BN_TUBBA
+		3 = BN_MUKARRIB
+	}
+	heir_female = {
+		1 = BN_QAHTAN          
+		2 = BN_TUBBA
+		3 = BN_MUKARRIB
+	}
+
+	trigger = {
+		OR = {
+			primary_culture = himyarite
+			primary_culture = minaean
+			primary_culture = sabean
+			primary_culture = yamnati
+		}
+		government = monarchy
+	}
+}
+
+waaqeffanna_muudaa = {
+	ruler_male = {
+		1 = ABBAA_MUUDAA          
+		2 = ABBAA_MUUDAA
+		3 = ABBAA_MUUDAA
+	}
+
+	ruler_female = {
+		1 = ABBAA_MUUDAA
+		2 = ABBAA_MUUDAA
+		3 = ABBAA_MUUDAA
+	}
+	rank = {
+		1 = MANA_WAAQAYYOO        
+		2 = HAALA_WAAQAYYOO       
+		3 = MOOTUMMAA_WAAQAYYOO     
+	}
+
+
+	trigger = {
+		any_owned_province = {
+			has_great_project = {
+				type = abbaa_muudaa_seat
+				tier = 1
+			}
+		}
+		religion = waaqeffanna
+	}
+}
+
+
+gadaa_system = {
+	ruler_male = {
+		1 = ABBAA_BORANA     
+		2 = ABBAA_GADAA
+		3 = ABBAA_BOKKU
+	}
+
+	ruler_female = {
+		1 = ABBAA_BORITTI
+		2 = ABBAA_GADITTI
+		3 = ABBAA_BOKKIT
+	}
+	rank = {
+		1 = MINOR_GADAA        
+		2 = GADAA       
+		3 = HIGH_GADAA     
+	}
+
+
+	trigger = {
+		has_reform = pffl_gadaa_council
+		religion = waaqeffanna
+	}
+}
+
+waaqeffanna_thgeocracy = {
+	ruler_male = {
+		1 = MINOR_QALLU          
+		2 = QALLU
+		3 = HIGH_QALLU
+	}
+
+	ruler_female = {
+		1 = MINOR_QALLITTI          
+		2 = QALLITTI
+		3 = HIGH_QALLITTI
+	}
+	rank = {
+		1 = WAAQABIIL     
+		2 = WAAQORTOOYA
+		3 = WAAQORTOOYO  
+	}
+
+
+	trigger = {
+		government = theocracy
+		religion = waaqeffanna
+	}
+}

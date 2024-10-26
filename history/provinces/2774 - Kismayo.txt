@@ -1,0 +1,17 @@
+#2774 - Kismayo
+owner = MCB
+controller = MCB
+add_core = MCB
+culture = macroobii
+religion = waaqeffanna
+capital = "Kismayo"
+trade_goods = fish
+is_city = yes
+base_tax = 4
+base_production = 3
+base_manpower = 5
+add_local_autonomy = 25
+discovered_by = east_african
+discovered_by = indian
+discovered_by = muslim
+discovered_by = SRP

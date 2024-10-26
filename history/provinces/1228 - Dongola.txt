@@ -1,0 +1,17 @@
+#1228 - Dongola
+culture = nubian
+religion = kemetic
+capital = "Dunqula"
+owner = NBA
+controller = NBA
+add_core = NBA
+add_core = MAK
+is_city = yes
+trade_goods = grain
+base_manpower = 2
+base_tax = 2
+base_production = 1
+discovered_by = east_african
+discovered_by = muslim
+discovered_by = eastern
+discovered_by = euro_pagan_tech

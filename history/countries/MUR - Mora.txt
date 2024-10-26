@@ -1,0 +1,8 @@
+government = monarchy
+add_government_reform = pffl_gadaa_council
+technology_group = east_african
+unit_type = sub_saharan
+religion = waaqeffanna
+government_rank = 1
+primary_culture = harari
+capital = 2773 #Mora/Mura

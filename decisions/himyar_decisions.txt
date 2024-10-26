@@ -1,0 +1,31 @@
+# country_decisions = {
+
+	# pf_form_amazigh = {
+		# major = no
+		# potential = {
+			# ai = no
+			# tag = HIM
+			# mission_completed = faith_under_attack
+		# }
+
+		# provinces_to_highlight = {
+			# NOT = {
+				# religion = ROOT
+			# }
+		# }
+		
+		# allow = {
+			# NOT = {
+				# OR = {
+					# has_country_modifier = himyar_tolerance
+					# has_country_modifier = himyar_intolerance
+				# }
+			# }
+		# }
+		# effect = {
+			# country_event = {
+				# id = himyarite_events.1
+			# }
+		# }
+	# }
+# }

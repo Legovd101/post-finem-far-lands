@@ -1,0 +1,8 @@
+
+
+vassal = {
+	first = HIM
+	second = BEB
+	start_date = 1444.11.11
+	end_date = 1459.7.1
+}

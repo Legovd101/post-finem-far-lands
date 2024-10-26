@@ -1,0 +1,16 @@
+religion = jewish
+capital = 1209# Berbera
+technology_group = muslim
+government = republic
+government_rank = 1
+primary_culture = himyarite
+1444.11.11 = { 
+	monarch = { 
+		name = "Abi"
+		dynasty = "Kabir"
+		adm = 6
+		dip = 6
+		mil = 4
+		birth_date = 1404.08.29
+	}
+}

@@ -1,0 +1,3 @@
+technology_group = muslim
+government_rank = 2
+primary_culture = yamnati

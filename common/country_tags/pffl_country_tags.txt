@@ -1,0 +1,19 @@
+#Arabia
+HIM = "countries/Himyar.txt"
+SHB = "countries/Saba.txt"
+MNT = "countries/Yamnat.txt"
+AAD = "countries/Ad.txt"
+#Africa
+NBA = "countries/Nubia.txt"
+ALW = "countries/Alwa.txt"
+BEM = "countries/Blemmyia.txt"
+ZGW = "countries/Zagwe.txt"
+MUR = "countries/Mora.txt"
+MCB = "countries/Macroobiya.txt"
+#Colonies
+BEB = "countries/Berbera.txt"
+DSC = "countries/Dioscouridou.txt"
+SRP = "countries/Sarapion.txt"
+ZNG = "countries/Zangabar.txt"
+WMP = "countries/Wampul.txt"
+HSH = "countries/Hadashtun.txt"

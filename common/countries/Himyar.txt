@@ -1,0 +1,93 @@
+#Country Name: Please see filename.
+graphical_culture = muslimgfx
+color = { 130 81 68 }
+revolutionary_colors = { 1 0 1 }
+historical_idea_groups = { 
+	humanist_ideas
+	offensive_ideas
+	trade_ideas
+	administrative_ideas
+	maritime_ideas
+	diplomatic_ideas
+	quality_ideas
+	aristocracy_ideas
+}
+monarch_names = { 	
+	"Ephraim #3" = 6
+	"Alexander #2" = 6
+	"Solomon #4" = 6
+	"Judah #2" = 6
+	"Ari #1" = 6
+	"Isaac #4" = 6
+	"Benjamin #5" = 6
+	"Caleb #1" = 6
+	"Ezra #2" = 6
+	"Micah #5" = 6
+	"Levi #3" = 6
+	"Tobias #2" = 6
+	"Reuben #1" = 6
+	"Nathaniel #3" = 5
+	"Ezekiel #4" = 5
+	"Mordecai #1" = 5
+	"Asher #2" = 5
+	"Rachel #3" = 5
+	"Uriel #1" = 5
+	"Gideon #2" = 5
+	"Abel #1" = 5
+	"Malachi #2" = 5
+	"Zachariah #3" = 5
+	"Elijah #1" = 5
+	"Joel #5" = 5
+	"Nehemiah #6" = 5
+	"Zephaniah #1" = 5
+	"Amos #0" = 5
+	"Simeon #0" = 5
+	"Hosea #0" = 5
+	"Obadiah #0" = 5
+	"Saul #0" = 5
+	"Eliezer #0" = 5
+	"Shimon #0" = 5
+	"Moses #0" = 4
+	"Jonah #0" = 4
+	"Zechariah #0" = 4
+	"Hiram #0" = 4
+	"Elisha #0" = 4
+	"Ephron #0" = 4
+	"Phineas #0" = 4
+	"Jesse #0" = 4
+	"Seth #0" = 4
+	"Boaz #0" = 4
+	"Jairus #0" = 4
+	"Haggai #0" = 4
+	"Cyrus #0" = 4
+	"Nathan #0" = 4
+	"Zebulun #0" = 4
+	"Obadiah #0" = 4
+	
+	"Helena #0" = -1
+	"Sophia #0" = -1
+	"Eirene #0" = -1
+	"Phoebe #0" = -1
+	"Cassandra #0" = -1
+	"Dorothea #0" = -1
+	"Calliope #0" = -1
+	"Evangelia #0" = -1
+	"Theophania #0" = -1
+	"Thalassa #0" = -1
+}
+leader_names = { 
+	Achilles Adina Alexios Alon Ariadne Artemis Athaliah Avital Calista Cassandra Damaris Daniella Delilah Dorian Eleni Eleazar Eliana Ephraim Evander Galila Galina 
+	Helena Hermione Ioannis Isidore Jocasta Kalliope Leda Lysander Magdalene Marcella Melina Nereus Neomi Ophira Pandora Persephone Phoebe Sapphira 
+	Selene Seraphina Simon Thalia Theodora Xander Yael Zephyr Zina Zosimos
+}
+ship_names = { 
+	Eshkol Anthos Amnon Achaios Delphine Doron Eran Galatea Hadas Iason Ithamar Jael Kallias Lilah Makeda Maia Mordechai Nike Phoebus Rahel Selene Seraphim Talia Xenia 
+	Yael Zephyr Ayalon Kassandra Darius Ariela Damara Eleazar Helena Hera Eitan Eliora Evander Galia Isadora Levi Maris Mordecai Neria
+	Ophira Penelope Selene Solomona Thalia Tziona Yosef Zara
+}
+fleet_names = { 
+	"Tziya'ah $PROVINCE$"
+}
+army_names = { 
+	"Tzva $PROVINCE$"
+}

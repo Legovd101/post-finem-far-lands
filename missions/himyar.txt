@@ -1,0 +1,508 @@
+HIM1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HIM } 
+
+	voice_in_wilderness = {
+		icon = mission_alliances
+		position = 1
+		provinces_to_highlight = {
+			is_capital = yes
+			owner = {
+				NOT = { religion = sunni religion = hellenic }
+			}
+		}
+		trigger = {
+			any_country = {
+				NOT = { religion = sunni religion = hellenic }
+				has_opinion = {
+					who = ROOT
+					value = 50
+				}
+			}
+		}
+
+		effect = {
+			random_country = {
+				limit = {
+					NOT = { religion = sunni religion = hellenic }
+					has_opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+				create_alliance = ROOT
+				join_all_defensive_wars_of = ROOT
+			}
+		}
+	}
+}
+HIM2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HIM } 
+
+	him_twenty_years_war = {
+		icon = mission_impaled_soldies
+		position = 2
+		required_missions = { voice_in_wilderness eclipse_upstarts } 
+		provinces_to_highlight = {
+			owner = { war_with = ROOT }
+			NOT = { controller = { tag = ROOT } }
+		}
+
+		trigger = {
+			SHB = {
+				OR = {
+					all_owned_province = {
+						controlled_by = ROOT
+					}
+					NOT = { war_score = -99 }
+				}
+			}
+		}
+
+		effect = {
+			every_province = {
+				limit = { owner = { tag = SHB } }
+				cede_province = HIM
+				remove_core = SHB
+			}
+		}
+	}
+
+	him_reestablishing_authority = {
+		icon = mission_imperial_cities
+		position = 3
+		required_missions = { him_twenty_years_war } 
+		provinces_to_highlight = {
+			owner = { tag = ROOT }
+			NOT = { is_core = ROOT }
+		}
+
+		trigger = {			
+			all_owned_province = { is_core = ROOT }
+		}
+
+		effect = {
+			add_legitimacy = -15
+			add_church_power = 10
+			country_event = {
+				id = himyarite_events.2
+			}
+		}
+	}
+}
+
+HIM2_unknown = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = HIM
+		NOT = {	has_country_flag = him_tolerant_path }
+		NOT = { has_country_flag = him_intolerant_path }
+	}
+	
+	him_unknown_mission_1 = {
+		icon = mission_unknown_mission
+		position = 4
+		required_missions = { him_reestablishing_authority } 
+		provinces_to_highlight = {
+		}
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+
+		effect = {
+		}
+	}
+	
+	him_unknown_mission_2 = {
+		icon = mission_unknown_mission
+		position = 5
+		required_missions = { him_unknown_mission_1 } 
+		provinces_to_highlight = {
+		}
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+
+		effect = {
+		}
+	}
+	
+	him_unknown_mission_3 = {
+		icon = mission_unknown_mission
+		position = 6
+		required_missions = { him_unknown_mission_2 } 
+		provinces_to_highlight = {
+		}
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+
+		effect = {
+		}
+	}
+}
+HIM2_intolerance = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HIM has_country_flag = him_intolerant_path } 
+
+	keep_an_eye_out = {
+		icon = mission_occupy_alexandria
+		position = 4
+		required_missions = { him_reestablishing_authority } 
+		provinces_to_highlight = {
+			province_id = 390 
+		}
+
+		trigger = {
+			390 = { has_building = fort_15th }
+		}
+
+		effect = {
+			change_ruler_stat = {
+				amount = 1
+				type = mil
+			}
+			390 = {
+				add_province_modifier = {
+					name = "him_extra_garrisons"
+					duration = 1825
+				}
+			}
+		}
+	}
+
+	restore_faith = {
+		icon = mission_hands_praying
+		position = 5
+		required_missions = { keep_an_eye_out } 
+		provinces_to_highlight = {
+			owner = { tag = ROOT }
+			NOT = { religion = ROOT has_building = temple }
+		}
+
+		trigger = {
+			calc_true_if = {
+				amount = 3
+				all_owned_province = {
+					NOT = { religion = ROOT }
+					has_building = temple
+				}
+			}
+		}
+
+		effect = {
+			every_owned_province = {
+				limit = { has_building = temple }
+				add_country_modifier = {
+					name = "him_religious_settlements"
+					duration = -1
+				}
+			}
+			add_church_power = 15
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 20
+			}
+		}
+	}
+
+	heretics_eraicated = {
+		icon = mission_kon_repel_the_missionaries
+		position = 6
+		required_missions = { restore_faith } 
+		provinces_to_highlight = {
+			owner = { tag = ROOT }
+			NOT = { religion = ROOT }
+		} 
+
+		trigger = {
+			OR = {
+				all_owned_province = {
+					religion = ROOT
+				}
+				religious_unity = 1
+			}
+		}
+
+		effect = {
+			set_country_flag = formed_intolerant_yamnat
+			add_legitimacy = 20
+			country_event = {
+				id = yamnati_events.1
+			}
+		}
+	}
+}
+
+HIM2_tolerance = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HIM has_country_flag = him_tolerant_path } 
+
+	him_yamnati_brothers = {
+		icon = mission_patronize_sufi_scholars
+		position = 4
+		required_missions = { him_reestablishing_authority } 
+		provinces_to_highlight = {
+			culture = sabean
+		}
+
+		trigger = {
+			accepted_culture = sabean
+		}
+
+		effect = {
+			change_ruler_stat = {
+				amount = 2
+				type = dip
+			}
+			every_province = {
+				limit = { culture = sabean }
+				add_unrest = -2
+			}
+		}
+	}
+	
+	reversing_devastation = {
+		icon = mission_early_game_buildings
+		position = 5
+		required_missions = { him_yamnati_brothers } 
+		provinces_to_highlight = {
+			culture = sabean
+			NOT = { num_of_times_improved_by_owner = 5 }
+		}
+
+		trigger = {
+			calc_true_if = {
+				amount = 3
+				all_owned_province = {
+					culture = sabean
+					num_of_times_improved_by_owner = 5
+				}
+			}
+		}
+
+		effect = {
+			every_province = {
+				limit = { culture = sabean }
+				add_unrest = -2
+			}
+			custom_tooltip = random_converts_tt
+			country_event = {
+				id = himyarite_events.3
+			}
+		}
+	}
+	redefining_identity  = {
+		icon = mission_reliable_allies
+		position = 6
+		required_missions = { reversing_devastation } 
+		provinces_to_highlight = {
+			owner = { tag = ROOT }
+			NOT = { religion = ROOT }
+		} 
+
+		trigger = {
+			OR = {
+				all_owned_province = {
+					religion = ROOT
+				}
+				religious_unity = 1
+			}
+		}
+
+		effect = {
+			set_country_flag = formed_tolerant_yamnat
+			add_legitimacy = 30
+			country_event = {
+				id = yamnati_events.1
+			}
+		}
+	}
+}
+
+HIM3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HIM } 
+
+	eclipse_upstarts = {
+		icon = mission_assemble_an_army
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			if = {
+				limit = { ai = no } 
+				army_size = SHB
+				manpower_percentage = 0.75
+			}
+			else = { 
+				army_size_percentage = 1.0
+				num_of_generals = 1
+				navy_size_percentage = 1.0
+			}
+		}
+		effect = {
+			every_province = {
+				limit = { owner = { tag = SHB } }
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+HIM4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HIM } 
+}
+HIM5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HIM } 
+
+	faith_under_attack = {
+		icon = mission_central_asian_city
+		position = 1
+		required_missions = {  } 
+
+		trigger = {
+			grown_by_development = 10
+		}
+
+		effect = { 
+			country_event = { 
+				id = himyarite_events.1
+				tooltip = chooose_religious_policy
+			}
+		} 
+	}
+
+	desert_border = {
+		icon = mission_arabian_fort
+		position = 3
+		required_missions = { faith_under_attack } 
+		provinces_to_highlight = {
+		}
+
+		trigger = {
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 40
+			}
+		}
+
+		effect = {
+			mahra_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hadramut_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	defending_interests = {
+		icon = mission_arabian_ports
+		position = 4
+		required_missions = { desert_border } 
+		provinces_to_highlight = {
+			province_id = 4284
+			NOT = { has_building = fort_15th }
+		}
+
+		trigger = {
+			owns_core_province = 4284
+			4283 = {
+				has_building = fort_15th
+			}
+		}
+
+		effect = {
+			4284 = {
+				add_province_modifier = {
+					name = "him_east_frontier"
+					duration = 3650
+				}
+			}
+		}
+	}
+
+	far_friends = {
+		icon = mission_colonize_the_west
+		position = 6
+		required_missions = { defending_interests } 
+		provinces_to_highlight = {
+			province_id = 535
+		}
+
+		trigger = {
+			535 = {
+				owner = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+		}
+
+		effect = { 
+			set_country_flag = can_use_propagate_religion
+			535 = {
+				add_province_modifier = {
+					name = "him_arabian_exports"
+					duration = 3650
+				}
+			}
+			387 = {
+				add_province_modifier = {
+					name = "him_indian_imports"
+					duration = 3650
+				}
+				set_province_flag = kochin_trade_established
+			}
+		} 
+	}
+}

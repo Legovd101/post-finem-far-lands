@@ -1,0 +1,174 @@
+namespace = huwan_events
+
+country_event = {
+    id = huwan_events.1
+    title = huwan_events.1.t
+    desc = huwan_events.1.d
+    picture = AULIC_COUNCIL_eventPicture
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+    option = {		# Decentralization path
+        name = huwan_events.1.a
+		ai_chance = {
+			factor = 10
+		}
+		custom_tooltip = decentralization_tt
+		set_country_flag = ogd_decentralization_path
+		swap_non_generic_missions = yes
+    }
+	option = {		# Centralization path
+        name = huwan_events.1.b
+		ai_chance = {
+			factor = 10
+		}
+		custom_tooltip = centralization_tt
+		set_country_flag = ogd_centralization_path
+		swap_non_generic_missions = yes
+    }
+}
+
+country_event = { #Abbaa Muudaa offers his leadership
+    id = huwan_events.2
+    title = huwan_events.2.t
+    desc = huwan_events.2.d
+    picture = HUSSITE_eventPicture
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+    option = {		# We gladly accept!
+        name = huwan_events.2.a
+		ai_chance = {
+			factor = 20
+		}
+		every_subject_country = {
+			ROOT = {
+				inherit = PREV
+			}
+		}
+		OGD = {
+			inherit = ROOT
+		}
+    }
+	option = {		# Are they stupid?
+        name = huwan_events.2.b
+		ai_chance = {
+			factor = 20
+		}
+		trigger = {
+			ai = no
+		}
+		OGD = {
+			add_casus_belli = {
+				target = ROOT
+				type = cb_vassalize_mission
+				months = 240
+			}
+		}
+    }
+}
+
+country_event = { #Treaty of Kismayo
+    id = huwan_events.3
+    title = huwan_events.3.t
+    desc = huwan_events.3.d
+    picture = DIPLOMACY_SIGNING_eventPicture
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+    option = {		# They need to be dismantled!
+        name = huwan_events.3.a
+		ai_chance = {
+			factor = 20
+		}
+		MCB = {
+			release = MJE
+			release = HOB
+			release = GLE
+			release_all_subjects = yes
+			white_peace = ROOT
+		}
+		set_country_flag = macrobia_dismantled
+		hidden_effect = {
+			MJE = {
+				add_truce_with = HOB
+				add_truce_with = GLE
+				add_truce_with = SRP
+				add_historical_rival = MCB
+			}
+			HOB = {
+				add_truce_with = MJE
+				add_truce_with = GLE
+				add_truce_with = SRP
+				add_historical_rival = MCB
+			}
+			GLE = {
+				add_truce_with = HOB
+				add_truce_with = MJE
+				add_truce_with = SRP
+				add_historical_rival = MCB
+			}
+			SRP = {
+				add_truce_with = HOB
+				add_truce_with = GLE
+				add_truce_with = MJE
+				add_historical_rival = MCB
+			}
+		}
+    }
+	option = {		# Clearly the Abbaa Muudaa could rule better!
+        name = huwan_events.3.b
+		ai_chance = {
+			factor = 20
+		}
+		trigger = {
+			ai = no
+		}
+		every_province = {
+			limit = { OR = { owned_by = MCB owned_by = SRP } }
+			cede_province = OGD
+			remove_core = MCB
+			remove_core = SRP
+		}
+    }
+}
+
+country_event = { #Abbaa Muudaa offers his leadership
+    id = huwan_events.4
+    title = huwan_events.4.t
+    desc = huwan_events.4.d
+    picture = HUSSITE_eventPicture
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+    option = {		# We gladly accept!
+        name = huwan_events.4.a
+		ai_chance = {
+			factor = 20
+		}
+		OGD = {
+			vassalize = ROOT
+		}
+    }
+	option = {		# Are they stupid?
+        name = huwan_events.4.b
+		ai_chance = {
+			factor = 20
+		}
+		trigger = {
+			ai = no
+		}
+		OGD = {
+			add_casus_belli = {
+				target = ROOT
+				type = cb_vassalize_mission
+				months = 240
+			}
+		}
+    }
+}
+

@@ -1,0 +1,70 @@
+ # Do not change tags in here without changing every other reference to them.
+# If adding new groups or cultures, make sure they are unique.
+#
+# Union tags do not suffer from the 'same_culture_group' tax penalty.
+# Primary tags are the first choice for rebel factions seeking cultural independence.
+#
+# graphical_culture = westerngfx
+# second_graphical_culture = muslimgfx (fallback if the first does not exist)
+
+
+cushitic = {
+	agaw = {
+		#Zagwe
+		primary = ZGW
+		dynasty_names = {
+			Krestos Lalibela Zagwe Seyum Haymanot Harbe "La'ab" Petros Kibra
+		}
+		male_names = {
+			Gebre Mesqel "Na'akueto" Kedus Yetbarak Abebaw Lalibela Jan Seyum Yemrehana Germa Tatadim Tetewudem Mara Takla Mairari Harbai Zena
+		}
+		female_names = {
+			Masqal Judith Lastal Lalial
+		}
+	}
+	macroobii = {
+		#Macrobia - Possible ancestors of modern Somali mentioned by Greek explorers
+		primary = MCB
+		dynasty_names = {
+			Walashma Muzaffar Gareen Gobroon Karanle Jaladi Harti Darod Gerad
+			# CKII
+			"Abrone" "Dir" "Hawiye" "Isaaq" "Digil" "Mirifle" "Gadabuursi" "Akishe" "Biyomaal" "Surre"  "Issa" "Marehan" "Bartire" "Rahanweyn" "Warsangali" "Samaale"
+		}
+		male_names = {
+			Abadir Abdale Abdirahman Abdulah Abdullah Abram Abu-Bakr Adan Adeer Ahmed Ali Amlale Aul Awe
+			Aydahis Balad Baraka Barakat Ciise Dagale Dhidhin Hamalmal Hamar Hamid Hantale Haqq Harire
+			Ibrahim Irir Isman Jamal Kadhafo Kedafu Khalaf Liban Mahammad Muhammad Mahamed Muhammed
+			Mahamud Mahmud Mansur Nahwi Naleye Nassir Nur Omer Sa'ad Sa'adaddin Sabir Sabr Sabraddin
+			Sadiq Salah Siciid Talha Umar Umardin Yayyo Yusuf Zuber Zubeyr
+		}
+		female_names = {
+			Aasha Adey Alaso Ambro Amburo Asha Asli Astur Awa Awrala Ayaan Barni Basr Beydaan
+			Billan Canab Cawo Deeqa Delombira Dobira Faadumo Fathia Fawzia Geesi Haweeya Hibaaq
+			Hodan Hoodo Iftiin Jiinow Khadra Ladan Leyla Laila Libin Luula Magol Maka Mariam
+			Mulki Nasteexo Sagal Sahra Sufia Ubah Ubax Waris Xalwo
+		}
+	}
+	ogaadeen = {
+		#Culture of Huwan
+		primary = OGD
+		dynasty_names = {
+			Walashma Muzaffar Gareen Gobroon Karanle Jaladi Harti Darod Gerad
+			# CKII
+			"Abrone" "Dir" "Hawiye" "Isaaq" "Digil" "Mirifle" "Gadabuursi" "Akishe" "Biyomaal" "Surre"  "Issa" "Marehan" "Bartire" "Rahanweyn" "Warsangali" "Samaale" "Iljex" "Dhiqle" "Maanta" "Duale" "Ugaas" "Bililiqo" "Maalim" "Madobe"
+		}
+		male_names = {
+			Abadir Aar Abdale Abdirahman Abdulah Abdullah Abram Abu-Bakr Adan Adeer Ahmed Ali Amlale Aul Awe
+			Aydahis Balad Baraka Barakat Ciise Dagale Dhidhin Hamalmal Hamar Hamid Hantale Haqq Harire
+			Ibrahim Irir Isman Jamal Kadhafo Kedafu Khalaf Liban Mahammad Muhammad Mahamed Muhammed
+			Mahamud Mahmud Mansur Nahwi Naleye Nassir Nur Omer Sa'ad Sa'adaddin Sabir Sabr Sabraddin
+			Sadiq Salah Siciid Talha Umar Umardin Yayyo Yusuf Zuber Zubeyr Raage Adeen Bashiir Farah Nuruddin Xuseen Kaladi 
+
+		}
+		female_names = {
+			Aasha Adey Alaso Ambro Amburo Asha Asli Astur Awa Awrala Ayaan Barni Basr Beydaan
+			Billan Canab Cawo Deeqa Delombira Dobira Faadumo Fathia Fawzia Geesi Haweeya Hibaaq
+			Hodan Hoodo Iftiin Jiinow Khadra Ladan Leyla Laila Libin Luula Magol Maka Mariam
+			Mulki Nasteexo Sagal Sahra Sufia Ubah Ubax Waris Xalwo Asli
+		}
+	}
+}

@@ -1,0 +1,80 @@
+government = monarchy
+add_government_reform = pffl_gadaa_council
+government_rank = 2
+primary_culture = amhara
+religion = waaqeffanna
+technology_group = east_african
+unit_type = sub_saharan
+capital = 2791 #Ankober
+religious_school = shafii_school
+
+#Axid Rulers of Shewa
+1382.1.1 = {
+	monarch = {
+		name = "Negasi Krestos"
+		dynasty = "Axid"
+		adm = 3
+		dip = 3
+		mil = 1
+	}
+}
+
+1703.1.1 = {
+	monarch = {
+		name = "Sebestyanos"
+		dynasty = "Axid"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+1718.1.1 = {
+	monarch = {
+		name = "Kidane Kale"
+		dynasty = "Axid"
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+
+1744.1.1 = {
+	monarch = {
+		name = "Amha Iyasus"
+		dynasty = "Axid"
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+
+1775.1.1 = {
+	monarch = {
+		name = "Asfaw Wossen"
+		dynasty = "Axid"
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}
+
+1808.1.1 = {
+	monarch = {
+		name = "Wossen Seged"
+		dynasty = "Axid"
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+
+1813.1.1 = {
+	monarch = {
+		name = "Sahle Selassie"
+		dynasty = "Axid"
+		adm = 6
+		dip = 6
+		mil = 4
+	}
+}

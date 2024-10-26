@@ -1,0 +1,279 @@
+namespace = sabean_events
+
+country_event = {
+    id = sabean_events.2
+    title = sabean_events.2.title
+    desc = sabean_events.2.desc
+    picture = AULIC_COUNCIL_eventPicture
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+    option = {		# Expansionist path
+        name = sabean_events.2.a
+		ai_chance = {
+			factor = 10
+		}
+		custom_tooltip = expansionist_tt
+		set_country_flag = shb_expansionist_path
+		swap_non_generic_missions = yes
+    }
+	option = {		# Proselytizing path
+        name = sabean_events.2.b
+		ai_chance = {
+			factor = 10
+		}
+		custom_tooltip = proselytize_tt
+		set_country_flag = shb_proselytize_path
+		swap_non_generic_missions = yes
+    }
+}
+
+# Muslim Expedition
+country_event = {
+    id = sabean_events.3
+    title = sabean_events.3.title
+    desc = sabean_events.3.desc
+    picture = AULIC_COUNCIL_eventPicture
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+	clr_country_flag = missionaries_scheduled_1
+	clr_country_flag = missionaries_scheduled_2
+	clr_country_flag = missionaries_scheduled_3
+	}
+    option = {		# 1 Near Port
+        name = sabean_events.3.a
+		ai_chance = {
+			factor = 9
+		}
+		add_treasury = -50
+		random_list = {
+			70 = {
+				random_province = {
+					limit = { sea_zone = { OR = { area = red_sea_area area = arabian_sea_area } }  NOT = { religion = ROOT } }
+					province_event = {
+						id = sabean_events.4
+						days = 30
+						random = 15
+					}
+				}
+			}
+			30 = {
+				country_event = {
+					id = sabean_events.5
+				}
+			}
+		}
+    }
+	option = {		# 2 Med Ports
+        name = sabean_events.3.b
+		ai_chance = {
+			factor = 10
+		}
+		add_treasury = -100
+ 		random_list = {
+			55 = {
+				custom_tooltip = in_two_provs
+				random_province = {
+					limit = { sea_zone = { OR = { area = persian_gulf_area area = swahili_coast_sea_area } }  NOT = { religion = ROOT } }
+					province_event = {
+						id = sabean_events.4
+						days = 180
+						random = 30
+					}
+				}
+				random_province = {
+					limit = { sea_zone = { OR = { area = persian_gulf_area area = swahili_coast_sea_area } }  NOT = { religion = ROOT } }
+					province_event = {
+						id = sabean_events.4
+						days = 180
+						random = 30
+					}
+				}
+			}
+			45 = {
+				country_event = {
+					id = sabean_events.5
+				}
+			}
+		}
+	}
+	option = {		# 3 Far Ports
+        name = sabean_events.3.c
+		ai_chance = {
+			factor = 8
+		}
+		add_treasury = -150
+		random_list = {
+			40 = {
+				custom_tooltip = in_three_provs
+				random_province = {
+					limit = { sea_zone = { OR = { area = bay_of_bengal_area area = andaman_sea_area } } NOT = { religion = ROOT } }
+					province_event = {
+						id = sabean_events.4
+						days = 365
+						random = 60
+					}
+				}
+				random_province = {
+					limit = { sea_zone = { OR = { area = bay_of_bengal_area area = andaman_sea_area } } NOT = { religion = ROOT } }
+					province_event = {
+						id = sabean_events.4
+						days = 365
+						random = 60
+					}
+				}
+				random_province = {
+					limit = { sea_zone = { OR = { area = bay_of_bengal_area area = andaman_sea_area } } NOT = { religion = ROOT } }
+					province_event = {
+						id = sabean_events.4
+						days = 365
+						random = 60
+					}
+				}
+			}
+			60 = {
+				country_event = {
+					id = sabean_events.5
+				}
+			}
+		}
+    }
+	option = {		# No Proselytizing
+        name = sabean_events.3.d
+		ai_chance = {
+			factor = 15
+		}
+		country_event = {
+			id = sabean_events.3
+			days = 1825
+		}
+    }
+}
+
+province_event = {
+	id = sabean_events.4
+	title = sabean_events.4.t
+	desc = sabean_events.4.d
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+
+	option = { #Accept Missionaries
+        name = sabean_events.4.a
+		ai_chance = {
+			factor = 15
+		}
+		ROOT = {
+			change_religion = FROM
+			add_province_modifier = {
+				name = religious_zeal_at_conv
+				duration = 4380
+			}
+			set_province_flag = missionaries_successful
+		}
+		FROM = {
+			country_event = {
+				id = sabean_events.6
+			}
+		}
+	}
+	option = { #Reject Missionaries
+        name = sabean_events.4.a
+		ai_chance = {
+			factor = 15
+		}
+		FROM = {
+			country_event = {
+				id = sabean_events.7
+			}
+		}		
+	}
+}
+
+country_event = {
+	id = sabean_events.5
+	title = sabean_events.5.t
+	desc = sabean_events.5.d
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		if = {
+			limit = { OR = { has_country_flag = missionaries_scheduled_2 has_country_flag = missionaries_scheduled_3 } }
+		}
+		else = {
+			ROOT = {
+				set_country_flag = missionaries_scheduled_1
+				country_event = {
+					id = sabean_events.3
+					days = 1825
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sabean_events.5.a
+	}
+}
+
+country_event = { #Lost at Sea
+	id = sabean_events.6
+	title = sabean_events.6.t
+	desc = sabean_events.6.d
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		if = {
+			limit = { OR = { has_country_flag = missionaries_scheduled_1 has_country_flag = missionaries_scheduled_3 } }
+		}
+		else = {
+			ROOT = {
+				set_country_flag = missionaries_scheduled_2
+				country_event = {
+					id = sabean_events.3
+					days = 1825
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sabean_events.6.a
+	}
+}
+
+country_event = {
+	id = sabean_events.7
+	title = sabean_events.7.t
+	desc = sabean_events.7.d
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		if = {
+			limit = { OR = { has_country_flag = missionaries_scheduled_1 has_country_flag = missionaries_scheduled_2 } }
+		}
+		else = {
+			ROOT = {
+				set_country_flag = missionaries_scheduled_3
+				country_event = {
+					id = sabean_events.3
+					days = 1825
+				}
+			}
+		}
+	}
+
+	option = {
+		name = sabean_events.7.a
+	}
+}

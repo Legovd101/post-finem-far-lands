@@ -1,0 +1,165 @@
+country_decisions = {
+
+	pffl_vassalize_geledi = {
+		major = no
+		potential = {
+			ai = no
+			tag = OGD
+			has_country_flag = macrobia_dismantled
+			NOT = { has_country_flag = vassalized_geledi }
+		}
+
+		provinces_to_highlight = {
+			owned_by = GLE
+		}
+		
+		allow = {
+			GLE = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			OR = {
+				diplomatic_reputation = 3
+				has_spy_network_in = {
+					who = GLE
+					value = 75
+				}
+			}
+		}
+		effect = {
+			GLE = {
+				country_event = {
+					id = huwan_events.4
+				}
+			}
+			set_country_flag = vassalized_geledi
+		}
+	}
+
+	pffl_vassalize_hobyo = {
+		major = no
+		potential = {
+			ai = no
+			tag = OGD
+			has_country_flag = macrobia_dismantled
+			NOT = { has_country_flag = vassalized_hobyo }
+		}
+
+		provinces_to_highlight = {
+			owned_by = HOB
+		}
+		
+		allow = {
+			HOB = {
+				alliance_with = ROOT
+			}
+			development_in_provinces = {
+				value = 60
+				area = ogaden_area
+			}				
+		}
+		effect = {
+			HOB = {
+				country_event = {
+					id = huwan_events.4
+				}
+			}
+			set_country_flag = vassalized_hobyo
+		}
+	}
+
+	pffl_vassalize_majerteen = {
+		major = no
+		potential = {
+			ai = no
+			tag = OGD
+			has_country_flag = macrobia_dismantled
+			NOT = { has_country_flag = vassalized_majerteen }
+		}
+
+		provinces_to_highlight = {
+			owned_by = MJE
+		}
+		
+		allow = {
+			navy_size = MJE
+			development_in_provinces = {
+				value = 20
+				has_port = yes
+			}
+		}
+		effect = {
+			MJE = {
+				country_event = {
+					id = huwan_events.4
+				}
+			}
+			set_country_flag = vassalized_majerteen
+		}
+	}
+
+	pffl_vassalize_sarapion = {
+		major = no
+		potential = {
+			ai = no
+			tag = OGD
+			has_country_flag = macrobia_dismantled
+			NOT = { has_country_flag = vassalized_sarapion }
+		}
+
+		provinces_to_highlight = {
+			owned_by = SRP
+		}
+		
+		allow = {
+			treasury = SRP
+			years_of_income = 3
+			has_estate_loan = no
+			monthly_income = 4
+		}
+		effect = {
+			SRP = {
+				country_event = {
+					id = huwan_events.4
+				}
+			}
+			set_country_flag = vassalized_sarapion
+		}
+	}
+
+	pffl_vassalize_macroobiya = {
+		major = no
+		potential = {
+			ai = no
+			tag = OGD
+			has_country_flag = macrobia_dismantled
+			NOT = { has_country_flag = vassalized_macroobiya }
+		}
+
+		provinces_to_highlight = {
+			owned_by = MCB
+		}
+		
+		allow = {
+			MCB = {
+				all_owned_province = {
+					OR = {
+						controlled_by = ROOT
+						units_in_province = 4
+					}
+				}
+			}
+		}
+		effect = {
+			every_province = {
+				limit = { owner = { tag = MCB } }
+				add_core = ROOT
+				cede_province = ROOT
+				remove_core = MCB
+			}
+			set_country_flag = vassalized_macroobiya
+		}
+	}
+}

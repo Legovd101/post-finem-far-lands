@@ -1,0 +1,16 @@
+religion = punic_religion
+capital = 754
+technology_group = western
+primary_culture = punic_culture
+government = republic
+add_government_reform = pffl_state_emergency
+government_rank = 1
+1416.1.1 = { 
+	monarch = { 
+		name = "Necha"
+		dynasty = "Artzes"
+		adm = 2
+		dip = 3
+		mil = 1
+	}
+}

@@ -1,0 +1,14 @@
+him_tolerance = {
+	tolerance_heathen = 2.0
+	tolerance_heretic = 3.0
+	global_missionary_strength = -0.04
+}
+him_intolerance = {
+	tolerance_heathen = -2.0
+	tolerance_heretic = -3.0
+	global_missionary_strength = 0.04
+}
+him_noninterference = {
+	global_unrest = -9.0
+	global_missionary_strength = -10.0
+}

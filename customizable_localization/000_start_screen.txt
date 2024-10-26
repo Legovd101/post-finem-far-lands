@@ -1,0 +1,17 @@
+### Upper left title textbox
+#Ex: "Sweden's Situation"
+### Upper left description textbox
+#Ex: "The Ayyubid dynasty, once the scourge of Christianity, and the masters of Syria, Egypt and Arabia, still remain in the Kurdistani fortress of Hisn Kayfa. Fiercely independent, the small state has managed to survive in independence amidst giants such as the Timurids or Qara Qoyunlu.\nAs 1444 opens the Ayyubid princes have recently managed to overcome their local rivals and former vassals, the Artuqids, and solidified their hold over their small principality by the Tigris."
+# defined_text = {
+    # name = StartScreenUpLeftDesc
+	# random = no
+	# #POST FINEM Country Specific:
+	# text = {
+      	# localisation_key = string_start_britain_generic
+        # trigger = {
+			# capital_scope = {
+				# region = british_isles_region
+			# }
+        # }
+    # }
+# }

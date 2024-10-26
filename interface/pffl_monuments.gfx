@@ -1,0 +1,12 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_great_project_abbaa_muudaa_seat"
+		texturefile = "gfx//interface//abbaa_muudaa_seat.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_harar_jugol_pffl"	
+		texturefile = "gfx//interface//great_projects//great_project_harar_jugol.dds"
+	}
+
+}

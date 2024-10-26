@@ -1,0 +1,28 @@
+pagan = {
+
+	waaqeffanna = {
+		icon = 42
+		color = { 217 35 30 }
+		country = {
+			discipline = 0.05
+			may_recruit_female_generals = yes
+			female_advisor_chance = 0.25
+			
+		}
+		country_as_secondary = {
+			global_prosperity_growth = 0.1
+			global_unrest = -2
+		}
+
+		province = {
+			local_prosperity_growth = 0.15
+		}
+		
+		# personal_deity = yes
+		
+		heretic = { CAABUDILODA UUMAMI }
+
+	
+	}
+	
+}

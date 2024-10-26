@@ -1,0 +1,3 @@
+ogd_increased_fervor = {
+	global_missionary_strength = 0.05
+}

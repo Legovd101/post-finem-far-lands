@@ -1,0 +1,17 @@
+#2024 - Garoowe
+owner = MCB
+controller = MCB
+add_core = MCB
+add_core = MJE
+culture = macroobii
+religion = waaqeffanna
+capital = "Garoowe"
+is_city = yes
+base_manpower = 1
+trade_goods = fish
+base_tax = 1
+base_production = 1
+discovered_by = east_african
+discovered_by = indian
+discovered_by = muslim
+discovered_by = SRP

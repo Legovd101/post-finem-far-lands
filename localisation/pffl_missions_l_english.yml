@@ -1,0 +1,168 @@
+﻿l_english:
+ voice_in_wilderness_title: "A Voice in the Wilderness"
+ voice_in_wilderness_desc: "We've stood alone in this war for far too long. It's time to seek some outside help."
+ 
+ him_twenty_years_war_title: "The Twenty Years' War"
+ him_twenty_years_war_desc: "This bloody conflict has gone on for twenty years too long. We need to put an end to this."
+ 
+ shb_twenty_years_war_title: "The Twenty Years' War"
+ shb_twenty_years_war_desc: "This bloody conflict has gone on for twenty years too long. We need to put an end to this."
+ 
+ him_reestablishing_authority_title: "Reestablishing Our Authority"
+ him_reestablishing_authority_desc: "After the end of the conflict, we can finally try to pick up the pieces of this shattered region."
+ 
+ shb_reestablishing_authority_title: "Reestablishing Our Authority"
+ shb_reestablishing_authority_desc: "After the end of the conflict, we can finally try to pick up the pieces of this shattered region."
+ 
+ keep_an_eye_out_title: "Keeping an Eye Out"
+ keep_an_eye_out_desc: "While the war is over on the battlefields, it is not yet won in the hearts and minds of the people. We should construct some forts to watch over the populus of the reconquered territories."
+ 
+ restore_faith_title: "Restore the Faith"
+ restore_faith_desc: "It may behoove us to establish some communities of priests in the north to guide the Sabeans back to the light of Jehova."
+ 
+ heretics_eraicated_title: "Heretics Eradicated"
+ heretics_eraicated_desc: "It is time to bring the Sabeans back into the fold and restore the Tubbat of Yamnat!"
+ 
+ eclipse_upstarts_title: "Eclipse the Upstarts"
+ eclipse_upstarts_desc: "How can we win this war if we are only evenly matched? Our forces need to be larger and more organized!"
+ 
+ faith_under_attack_title: "Faith Under Attack"
+ faith_under_attack_desc: ""
+ 
+ desert_border_title: "Our Desert Border"
+ desert_border_desc: ""
+ 
+ defending_interests_title: "Defending Our Interests"
+ defending_interests_desc: ""
+ 
+ far_friends_title: "Friends in Far Places"
+ far_friends_desc: ""
+ 
+ him_unknown_mission_1_title: "Branching Mission"
+ him_unknown_mission_1_desc: ""
+ 
+ him_unknown_mission_2_title: "Branching Mission"
+ him_unknown_mission_2_desc: ""
+ 
+ him_unknown_mission_3_title: "Branching Mission"
+ him_unknown_mission_3_desc: ""
+ 
+ reversing_devastation_title: "Reversing the Devastation"
+ reversing_devastation_desc: "Unfortunately, our conquest has left the north in such a poor state that many in those lands are struggling to survive. Our state should step in and help them rebuild."
+ 
+ redefining_identity_title: "Redefining our Identity"
+ redefining_identity_desc: "The Sabeans now stand in a position to be fully reintegrated, and all of our hard work has finally paid off."
+ 
+ islamic_allies_title: "Islamic Allies"
+ islamic_allies_desc: "For now, our only nearby brothers in Islam lay to our North and West, and we should find some way to befriend them."
+ 
+ shb_unknown_mission_1_title: "Branching Mission"
+ shb_unknown_mission_1_desc: ""
+
+ shb_unknown_mission_2_title: "Branching Mission"
+ shb_unknown_mission_2_desc: ""
+
+ shb_unknown_mission_3_title: "Branching Mission"
+ shb_unknown_mission_3_desc: ""
+ 
+ northern_allies_title: "Northern Allies"
+ northern_allies_desc: ""
+ 
+ expand_ulema_title: "Expanding the Ulema"
+ expand_ulema_desc: "With our early triumph, we can now work towards establishing a presence of the clergy within our lands."
+ 
+ avenge_muhmad_title: "Avenge Muhmad"
+ avenge_muhmad_desc: "800 years ago, the Blessed Prophet Muhmad attempted an assault on the cities of Mecca and Medina. Although his attempt failed, his legacy still lives on in the hearts and minds of our people!"
+ 
+ him_yamnati_brothers_title: "Our Yamnati Brothers"
+ him_yamnati_brothers_desc: "The Himyarites should be eagerly welcomed back into our ranks, whether believers or not."
+ 
+ shb_yamnati_brothers_title: "Our Yamnati Brothers"
+ shb_yamnati_brothers_desc: "The Himyarites should be eagerly welcomed back into our ranks, whether believers or not."
+ 
+ spreading_light_title: "Spreading the Light"
+ spreading_light_desc: "The Himyarites are finally beginning to see the truth of our word!"
+ 
+ over_horizon_title: "Over the Horizon"
+ over_horizon_desc: "Let us spread the good word across the seas to those who have not yet heard it!"
+ 
+ tyrant_king_title: "The Tyrant King"
+ tyrant_king_desc: ""
+ 
+ spark_of_hope_title: "A Spark of Hope"
+ spark_of_hope_desc: ""
+ 
+ exploiting_opportunity_title: "Exploiting Opportunities"
+ exploiting_opportunity_desc: ""
+ 
+ clear_forests_title: "Clearing the Forests"
+ clear_forests_desc: "With enough cash, we could pay a team within our borders to clear the thick forests that obscure the natives around our settlements."
+ 
+ hannos_legacy_title: "Hanno's Legacy"
+ hannos_legacy_desc: "We are a people of the sea. From Qart-Hadasht to our home of Hadashtun, we were born to rule the waves. As such, it is natural for us to send an expedition up the coast to scout the surroundinng lands."
+ 
+ maritime_development_title: "Maritime Development"
+ maritime_development_desc: "With the discovery of gold to our West, many are eager to rush to settle the area. We need a better port if we're to support such an effort."
+ 
+ beseech_gods_title: "Beseech the Gods"
+ beseech_gods_desc: "An offering of what little we have should help sway the Gods to our favor in the coming battles."
+ 
+ coming_storm_title: "The Coming Storm"
+ coming_storm_desc: "With the Ya'arimi knocking at our gates, we only have a few years at best to prepare for their inevitable attack."
+ 
+ diplomatic_efforts_title: "Diplomatic Efforts"
+ diplomatic_efforts_desc: "Although we have been here for a long time, much of our focus has been inwards. We need to try and find some allies among the natives, no matter how different we may be."
+ 
+ making_friends_title: "Making Friends"
+ making_friends_desc: "We should try once more to show the Ya'arimi our superiority!"
+ 
+ existence_assured_title: "Existence Assured"
+ existence_assured_desc: "It has taken a long time, but we finally feel no longer at threat of being suddenly kicked from Iya'arim."
+ 
+ developing_outskirts_title: "Developing the Outskirts"
+ developing_outskirts_desc: "We need to incorporate the smaller settlements and communities outside of Hadashtun."
+ 
+ formalized_defense_title: "Formalized Defense"
+ formalized_defense_desc: "We are struggling with recent damages to our fortifications that still need to be repaired."
+ 
+ plan_of_defense_title: "Plan of Defense"
+ plan_of_defense_desc: "We need to organize a council for the defense of our peopl."
+ 
+ well_be_okay_title: "We'll Be Okay"
+ well_be_okay_desc: "No matter how safe we seem, our people are scared and divided. We need to ensure them that we will survive, as we have for many years now."
+ 
+ abbaa_duty_title: "An Abbaa Muudaa's Duty"
+ abbaa_duty_desc: "With the recent unification of the Macroobii Confederation, many Waaqeffataas are shaking in fear, and as their temporal leader, it is [Root.Monarch.GetName]'s duty to guarantee their protection." 
+ 
+ waaqa_prayers_title: "Prayers to Waaqa"
+ waaqa_prayers_desc: "Our coming actions have to be careful, calculated, and most importantly, endorsed by Waaqa." 
+ 
+ name_negus_title: "Naming a Negus"
+ name_negus_desc: "The Negus of Axum has proven [ETH.Monarch.GetHerselfHimself] incapable of controlling the Abrahamic threats, giving us cause to claim [ETH.Monarch.GetHerHis] title for ourselves." 
+ 
+ coastal_dominance_title: "Coastal Dominance"
+ coastal_dominance_desc: "Although the axumite crown is ours, we cannot afford the logistical toll of a realm divided." 
+ 
+ punt_kingdom_title: "The Kingdom of Punt"
+ punt_kingdom_desc: "With Axum under our control and a stable route secured, and the Judeans in our sights, the scraps of the [ETH.Monarch.Dynasty.GetName] empire still need to be swept into order." 
+ 
+ end_arabian_influence_title: "End Arabian Influence"
+ end_arabian_influence_desc: "The Himyarite colony of Berbera is an encroacment on our people, and should be expelled like the invaders they are." 
+ 
+ expel_yaweh_title: "Expel Yaweh"
+ expel_yaweh_desc: "Being the ones to take down the former kings of Axum, the kingdoms of Semien and Zagwe need to be dealt with." 
+ 
+ consolidate_power_title: "Consolidating Power"
+ consolidate_power_desc: "Our tributaries no longer send their due, but that can be fixed with a few bribes and kind words..." 
+ 
+ hobble_macroobii_title: "Hobble the Macroobii"
+ hobble_macroobii_desc: "The Macroobii Confederation sits at our border, eyeing the north eagerly with no idea of our increasing strength." 
+ 
+ filling_vacuum_title: "Filling the Vacuum"
+ filling_vacuum_desc: "By ending the Macroobii, we have opened a seat in the region for greater influence which we also intend to fill." 
+ 
+ swahili_states_title: "Swahili City-States"
+ swahili_states_desc: "Without the stability provided by the confederation, the small tribes of the Swahili lie ripe for the taking." 
+ 
+ subjugate_inland_tribes_title: "Subjugate the Inland Tribes"
+ subjugate_inland_tribes_desc: "The Way of Waaqa must be spread far and wide, even inwards to the unknown tribes!"

@@ -1,0 +1,534 @@
+OGD1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = OGD } 
+
+	waaqa_prayers = {
+		icon = mission_son_back_to_the_roots
+		position = 2
+		required_missions = { abbaa_duty } 
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = {
+				has_building = temple
+			}
+		}
+
+		trigger = {
+			all_owned_province = {
+				has_building = temple
+			}
+		}
+
+		effect = {
+			every_country = {
+				limit = {
+					religion = waaqeffanna
+				}
+				add_country_modifier = {
+					name = ogd_increased_fervor
+					duration = 5475
+				}
+			}
+			hadiya_area = {
+				add_permanent_claim = ROOT
+			}
+			shewa_area = {
+				add_permanent_claim = ROOT
+			}
+			ifat_area = {
+				add_permanent_claim = ROOT
+			}
+			somaliland_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+OGD2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = OGD } 
+
+	abbaa_duty = {
+		icon = answer_the_roman_question
+		position = 1
+		required_missions = {  } 
+		provinces_to_highlight = {}
+
+		trigger = {
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
+		}
+
+		effect = {
+			change_price = {
+				trade_goods = incense
+				key = grain_shortage
+				value = 0.25
+				duration = 3650
+			}
+			1207 = {
+				add_province_modifier = {
+					name = ogd_delegated_services
+					duration = 7300
+				}
+			}
+		}
+	}
+
+	name_negus = {
+		icon = mission_son_fetishist_alliances
+		position = 3
+		required_missions = { waaqa_prayers end_arabian_influence } 
+		provinces_to_highlight = {
+			owned_by = ETH
+		}
+
+		trigger = {			
+			ETH = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			alliance_with = ETH
+		}
+
+		effect = {
+			add_casus_belli = {
+				target = ETH
+				type = cb_vassalize_mission
+				months = 240
+			}
+		}
+	}
+}
+
+OGD2_centralization = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = OGD }
+
+	coastal_dominance = {
+		icon = mission_launch_a_flagship
+		position = 4
+		required_missions = { name_negus } 
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					is_capital = yes
+					owner = { OR = { tag = AFA tag = ETH } }
+				}
+				area = ifat_area
+			}
+		}
+
+		trigger = {
+			vassal = 2
+			OR = {
+				AND = {
+					AFA = {
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+					HAR = {
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+				}
+				ifat_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+
+		effect = {
+			shewa_area = {
+				add_permanent_claim = ROOT
+			}
+			southern_ethiopia_area = {
+				add_permanent_claim = ROOT
+			}
+			aussa_area = {
+				add_permanent_claim = ROOT
+			}
+			hadiya_area = {
+				add_permanent_claim = ROOT
+			}
+			HAR = {
+				country_event = {
+					id = huwan_events.2
+				}
+			}
+			AFA = {
+				country_event = {
+					id = huwan_events.2
+				}
+			}
+			MUR = {
+				country_event = {
+					id = huwan_events.2
+				}
+			}
+		}
+	}
+
+	punt_kingdom = {
+		icon = mission_reconquer_ceuta
+		position = 5
+		required_missions = { coastal_dominance } 
+		provinces_to_highlight = {
+			OR = {
+				area = southern_ethiopia_area
+				area = aussa_area
+				area = hadiya_area
+				area = shewa_area
+			}
+		}
+
+		trigger = {
+			hadiya_area = {
+				type = all
+				owned_by = ROOT
+			}
+			southern_ethiopia_area = {
+				type = all
+				owned_by = ROOT
+			}
+			aussa_area = {
+				type = all
+				owned_by = ROOT
+			}
+			shewa_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+
+		effect = {
+			horn_of_africa_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_nubia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+OGD3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = OGD } 
+
+	end_arabian_influence = {
+		icon = mission_assemble_an_army
+		position = 2
+		required_missions = { abbaa_duty consolidate_power } 
+		provinces_to_highlight = {}
+
+		trigger = {
+			somaliland_area = {
+				all_province_in_state = {
+					NOT = {
+						owner = { religion = jewish }
+					}
+				}
+			}
+		}
+
+		effect = {
+			add_casus_belli = {
+				target = ZGW
+				type = cb_annex
+				months = 600
+			}
+			add_casus_belli = {
+				target = BTI
+				type = cb_annex
+				months = 600
+			}		
+		}
+	}
+
+	expel_yaweh = {
+		icon = mission_levantine_restoration
+		position = 3
+		required_missions = { end_arabian_influence } 
+		provinces_to_highlight = {}
+
+		trigger = {
+			BTI = {
+				exists = no
+			}
+			ZGW = {
+				exists = no
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = zealotry
+				duration = 7300
+			}
+		}
+	}
+}
+
+OGD4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = OGD } 
+
+	consolidate_power = {
+		icon = mission_central_asian_city
+		position = 1
+		required_missions = {  } 
+		provinces_to_highlight = { owner = { is_subject_of = ROOT } }
+
+		trigger = {
+			all_subject_country = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+				NOT = {
+					liberty_desire = 25
+				}
+			}
+		}
+
+		effect = { 
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = tributary_state
+				}
+				ROOT = {
+					vassalize = PREV
+				}
+			}
+			add_aggressive_expansion = {
+				who = MCB
+				value = 100
+				apply_calc = yes
+			}
+			form_coalition_against = MCB
+			WAR = {
+				if = {
+					limit = { ai = yes }
+					add_aggressive_expansion = {
+						who = MCB
+						value = 100
+						apply_calc = yes
+					}
+					form_coalition_against = MCB
+				}
+			}
+			HAR = {
+				if = {
+					limit = { ai = yes }
+					add_aggressive_expansion = {
+						who = MCB
+						value = 100
+						apply_calc = yes
+					}
+					form_coalition_against = MCB
+				}
+			}
+			add_casus_belli = {
+				target = MCB
+				type = cb_super_badboy
+				months = 600
+			}
+			somaliland_area = {
+				add_permanent_claim = ROOT
+			}
+
+		} 
+	}
+
+	hobble_macroobii = {
+		icon = mission_mediterranean_islands
+		position = 2
+		required_missions = { consolidate_power } 
+		provinces_to_highlight = { country_or_non_sovereign_subject_holds = MCB }
+
+		trigger = {
+			offensive_war_with = MCB
+			MCB = {
+				defensive_war_with = ROOT
+				NOT = { war_score = -99 }
+			}
+		}
+
+		effect = { 
+			country_event = {
+					id = huwan_events.3
+			}
+		}
+	}
+
+	filling_vacuum = {
+		icon = mission_sail_to_the_east_indies
+		position = 3
+		required_missions = { hobble_macroobii } 
+		provinces_to_highlight = { 
+			OR = {
+				area = ajuuran_area
+				area = majarteen_area
+				area = mogadishu_area
+			}
+		}
+
+		trigger = {
+			ajuuran_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				is_core = owner
+			}
+			majarteen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				is_core = owner
+			}
+			mogadishu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				is_core = owner
+			}
+		}
+
+		effect = { 
+			northern_swahili_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mombasa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	swahili_states = {
+		icon = mission_trade_in_gold_coast
+		position = 4
+		required_missions = { filling_vacuum name_negus } 
+		provinces_to_highlight = { 
+			OR = {
+				area = northern_swahili_coast_area
+				area = mombasa_area
+			}
+		}
+
+		trigger = {
+			northern_swahili_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				is_core = owner
+			}
+			mombasa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				is_core = owner
+			}
+		}
+
+		effect = {
+			every_province = {
+				limit = {
+					OR = {
+						area = jubba_area
+						province_id = 1925
+						province_id = 1273
+					}
+				}
+				add_siberian_construction = 100
+			}
+		}
+	}
+
+}
+OGD5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = OGD } 
+
+	subjugate_inland_tribes = {
+		icon = mission_mayan_conquest
+		position = 5
+		required_missions = { swahili_states } 
+		provinces_to_highlight = { 
+			OR = {
+				area = northern_swahili_coast_area
+				area = mombasa_area
+				area = jubba_area
+				area = kenya_area
+			}
+		}
+
+		trigger = {
+			development_in_provinces = {
+				value = 125
+				OR = {
+					area = northern_swahili_coast_area
+					area = mombasa_area
+					area = jubba_area
+					area = kenya_area
+				}
+			}
+		}
+
+		effect = {
+			every_province = {
+				limit = {
+					OR = {
+						area = kenya_area
+						province_id = 4075
+						province_id = 4059
+						province_id = 4055
+					}
+				}
+				add_siberian_construction = 100
+			}
+			central_africa_region = {
+				discover_country = OGD
+			}
+		}
+	}
+}

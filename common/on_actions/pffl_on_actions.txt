@@ -1,0 +1,12 @@
+on_startup = {
+	if = {
+		limit = { tag = HSH }
+		country_event = { id = baqshi_events.1 }	# The Windswept Voyage
+	}	
+	destroy_great_project = {
+		type = harar_jugol
+	}
+}
+# on_battle_lost_province = {
+	# 754 = { decolonize = THIS }
+# }
